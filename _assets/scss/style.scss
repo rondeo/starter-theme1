@@ -1,0 +1,47 @@
+/*!
+Theme Name: Starter Theme for Self Starters
+Author: Developed by Oneupweb
+Author URI: https://www.oneupweb.com
+Description: A custom developed theme for Building Other Themes
+Version: 1.0.0
+Text Domain: oneupweb
+*/
+
+//@import "1-vendor/woocommerce/woocommerce";
+@import "1-vendor/functions";
+
+/**
+    It is recommended not to change the 'default' scss variables file, 
+    so that you can merge in future upgrades. instead, import your own variables
+    before 'default' is imported, and your vars will override.
+*/
+//@import "2-variables/custom";
+@import "2-variables/default";
+
+@import "3-tools/breakpoints";
+@import "3-tools/extends";
+@import "3-tools/mixins";
+@import "3-tools/utils";
+
+@import "4-global/body";
+@import "4-global/accessibility";
+@import "4-global/assets";
+@import "4-global/blocks";
+@import "4-global/buttons";
+@import "4-global/copy";
+@import "4-global/headings";
+@import "4-global/links";
+@import "4-global/media";
+@import "4-global/widgets";
+
+@import "6-design/archive";
+@import "6-design/footer";
+@import "6-design/form";
+@import "6-design/navigation";
+@import "6-design/page";
+@import "6-design/single";
+
+@import "7-helpers/common";
+@import "7-helpers/no-js";
+@import "7-helpers/toggles";
+

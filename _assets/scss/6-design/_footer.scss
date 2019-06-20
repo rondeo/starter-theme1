@@ -1,0 +1,40 @@
+.footer {
+
+    background: $footer-bg;
+    color: $footer-color;
+
+    &--inside {
+        @include container();
+        display: flex;       
+        align-items: center;
+        
+        padding: $grid-gutter;
+
+        @include media-breakpoint-down(sm) {
+            flex-direction: column;
+        }
+    }
+
+    &--copy {
+        max-width: 30rem;
+        margin-right: auto;
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 1rem;
+        }
+    }
+
+    &--social {
+        display: flex;
+        align-items: stretch;
+
+        .btn {
+            margin-left: #{$grid-gutter/2};
+        }
+    }
+
+    p {
+        color: inherit;
+    }
+
+}

@@ -1,0 +1,195 @@
+main.archive {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: $grid-gutter;
+}
+
+.--meta {
+
+    font-size: $font-size-sm;
+
+    display: flex;
+    align-items: center;
+
+    time {
+        font-weight: bold;
+        margin-right: 0.5rem;
+    }
+
+}
+
+.the-content .--meta {
+    
+    width: 100%;
+    display: block;
+    padding: 0.5rem 0;
+    line-height: 1em;
+        
+}
+
+.single--article {    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.--loop .the-post + .the-post {
+    margin-top: $grid-gutter;
+    padding-top: $grid-gutter;
+    border-top: 2px solid $secondary;
+}
+
+.search--result.__something-else {
+    background: $light;
+    padding: $grid-gutter;
+    margin-top: $grid-gutter;
+}
+
+.archive--loop h2 {
+    margin-bottom: $grid-gutter;
+    flex: 1 0 100%;
+    max-width: none;
+}
+
+.the-post {
+    
+    margin: 0;
+
+    h3 {
+        margin: 0;
+    }
+
+    p {
+        max-width: 35rem;
+        margin: 1em 0;
+        @include media-breakpoint-down(sm) {
+            display: none;
+        }
+    }
+
+}
+
+.--pagination {    
+    
+    .navigation.pagination {
+
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start; 
+        
+        border-top: 2px solid $secondary;
+        border-bottom: 2px solid $secondary;
+        margin: $grid-gutter 0;
+        padding: $grid-gutter 0;
+    }
+
+    .page-numbers {
+        border: $pagination-btn-border;
+        padding: $pagination-btn-padding;
+        background: $pagination-btn-bg;
+        color: $pagination-btn-color;
+        font-size: $pagination-btn-font-size;
+
+        &.current {
+            border: $pagination-btn-border__current;
+            padding: $pagination-btn-padding__current;
+            background: $pagination-btn-bg__current;
+            color: $pagination-btn-color__current;
+        }
+
+        &.prev, &.next {
+            border: $pagination-btn-border__prevnext;
+            padding: $pagination-btn-padding__prevnext;
+            background: $pagination-btn-bg__prevnext;
+            color: $pagination-btn-color__prevnext;
+        }
+    }
+}
+
+.--loop.__with-columns {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    article {
+        
+        margin: 0;
+
+        @include media-breakpoint-up(lg) {
+
+            flex: 0 0 calc(25% - #{$grid-gutter*3/4});
+
+            &:last-child:nth-child(4n+3),
+            &:last-child:nth-child(4n+2),
+            &:last-child:nth-child(4n+1) {
+                margin-right: auto;
+                border-bottom: 0;
+            }
+
+            &:nth-last-child(2):nth-child(4n+2),
+            &:nth-last-child(2):nth-child(4n+1),
+            &:nth-last-child(3):nth-child(4n+1) {
+                margin-right: $grid-gutter;
+                border-bottom: 0;
+            }
+
+        }
+
+        @include media-breakpoint-only(md) {
+
+            flex: 0 0 calc(33.33% - #{$grid-gutter*2/3});
+
+            &:last-child:nth-child(3n+2),
+            &:last-child:nth-child(3n+1) {
+                margin-right: auto;
+                border-bottom: 0;
+            }
+
+            &:nth-last-child(2):nth-child(3n+1) {
+                margin-right: $grid-gutter;
+                border-bottom: 0;
+            }
+
+        }
+
+        &.the-post {
+            border-top: none;
+            border-bottom: 2px solid $secondary;
+            padding-top: 0;
+            margin-top: 0;
+            margin-bottom: $grid-gutter;
+            padding-bottom: $grid-gutter;
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h3 {
+            font-family: $font-family-headings;
+            font-weight: 400;
+            margin-bottom: 0;
+            text-decoration: none;
+
+            small {
+                display: block;
+                font-family: $font-family-headings;
+                font-size: $font-size-default;
+                line-height: $font-size-default;
+                color: $secondary;
+            }
+        }
+
+        p {
+            font-size: $font-size-sm;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 ~ .wp-block-button:first-of-type {
+            margin-top: $grid-gutter;
+        }
+    }
+
+}

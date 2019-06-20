@@ -1,0 +1,226 @@
+.wp-block-typecase-container {
+    
+    @include container();
+    @include container-flex-column();
+    
+}
+
+.wp-block-gallery {
+    list-style: none;
+    padding-left: 0;
+    padding-right: 0;
+    margin: 2rem 0;
+    width: 100%;
+
+    li::before {
+        display: none;
+    }
+}
+
+.wp-block-embed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+
+    .twitter-tweet {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.wp-block-embed.is-type-video {
+    display: block;
+    
+    padding: calc(56.25% - 1rem) 0 1rem 0;
+    position: relative;
+    z-index: 0;
+
+    background: $block-loading-bg;    
+
+    iframe, .wp-block-embed__wrapper, > span {
+        position: absolute;
+        top: 0.5rem;
+        left: 0.5rem;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+        z-index: 1;
+        
+    }
+}
+
+.wp-block-image {
+    margin-left: 0;
+    margin-right: 0;
+
+    width: 100%;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/** the wordpress styles are actually buggy with responsive columns. this is a theme-compatible hotfix **/
+
+@media (min-width: 783px) {
+    .wp-block-column:nth-child(odd):not(:last-child) {
+        margin-right: #{$grid-gutter/2};
+    }
+
+    .wp-block-column:nth-child(even):not(:first-child) {
+        margin-left: #{$grid-gutter/2};
+    }
+
+    .wp-block-column:not(:first-child) {
+        margin-left: #{$grid-gutter/2};
+    }
+
+    .wp-block-column:not(:last-child) {
+        margin-right: #{$grid-gutter/2};
+    }
+    .__golden-columns .wp-block-column:nth-child(1) {
+        flex-basis: 62%;
+    }
+    .__golden-columns .wp-block-column:nth-child(2) {
+        flex-basis: 38%;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 782px) {
+    .wp-block-column {
+        flex-basis: calc(50% - #{$grid-gutter/2});
+        &:not(:last-child),
+        &:not(:first-child) {
+            margin: $grid-gutter 0;
+        }
+        
+        &:nth-child(odd) {
+            margin-right: $grid-gutter;
+        }
+    }
+}
+
+.ouw-block-gallery {
+
+    &--thumbnails {
+
+        max-width: 100%;
+        overflow: hidden;
+
+        figure.__selected img {                    
+            outline: 8px solid $primary;
+            cursor: pointer;
+        }
+        .blocks-gallery-item:hover img {
+            outline: 8px solid rgba($primary, 0.5);
+
+        }
+
+        &--nav__prev,
+        &--nav__next {
+            background: linear-gradient(to right, transparent, $page-bg 60%);
+            color: $secondary;
+            svg {
+                fill: $secondary;
+            }
+
+            &:hover {
+                background: $secondary;
+                color: color-yiq($secondary);
+                svg {
+                    fill: color-yiq($secondary);
+                }
+            }
+        }
+
+        &--nav__prev {
+            background: linear-gradient(to right, $body-bg, transparent 60%);
+        }
+
+    }
+
+    .slider-controls--button {
+        @include reset-button();
+        @include arrow-secondary();
+        
+        position: absolute;
+        top: calc(50% - 1rem);
+        right: 0;
+        width: 2rem;
+        height: 2rem;
+        font-size: 0;
+        color: transparent;
+
+        background-color: $page-bg;
+        opacity: 0.25;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.prev {
+            right: auto;
+            left: 0;
+            background-color: $body-bg;
+            transform: rotate(180deg);
+        }
+    }
+
+    
+    .wp-block-gallery {
+        display: block;
+        white-space: nowrap;       
+
+        .blocks-gallery-item {
+            display: inline-block;
+        }
+    }
+
+}
+
+.hentry.project {
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 #{$grid-gutter/2} $grid-gutter #{$grid-gutter/2};
+
+    img {
+        width: 100%;
+        height: auto;
+        margin-bottom: $grid-gutter;
+    }
+
+    figcaption {
+        flex: 1 1 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;        
+        text-align: center;
+        margin-top: auto;
+   
+    }
+
+    h4 {
+        text-transform: capitalize;
+    }
+
+    a.btn {
+        flex: 0 0 auto;
+        margin-top: auto;
+        align-self: center;        
+    }
+
+}
+
+.wp-block-cover {
+
+    &-text a {
+        @extend .btn;
+        
+        max-width: 16rem;
+    }
+}

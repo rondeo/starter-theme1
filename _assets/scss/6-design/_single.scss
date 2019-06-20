@@ -1,0 +1,116 @@
+main.single .--share {
+    padding-top: 0.5rem;
+    ul {
+        border: 1px solid $share-icon-fill;
+    }
+
+    svg {
+        fill: $share-icon-fill;
+    }
+}
+
+main.single .--share, .single--related-articles {
+    border-top: 2px solid $secondary;
+}
+/*
+.single--meta, .single--related-articles {
+    border-bottom: 2px solid $secondary;
+}
+*/
+.related-post--meta {
+    color: $secondary;
+}
+
+.single--the-content {
+    margin-bottom: $grid-gutter;
+    padding-bottom: $grid-gutter;
+    border-bottom: 2px solid $secondary;
+
+
+    .ouw-block-gallery {
+
+        width: calc(100% + #{$grid-gutter*2});
+        margin-left: #{-$grid-gutter*2};    
+        position: relative;
+
+        @include media-breakpoint-down(sm) {
+            width: 100%;
+            margin-left: 0;            
+        }
+
+        &--slider {
+            max-height: calc(100vh - 10rem);
+        }
+
+        &--slider::after {
+            content:'';
+            display: inline-block;
+            padding: 75% 0 0 0;
+            width: 0;
+            height: auto;
+        }
+
+        &--thumbnails {
+            display: block;        
+            overflow: hidden;
+            height: 8rem;
+            position: relative;
+    
+            .wp-block-gallery {
+                display: block;
+                flex-wrap: nowrap;
+                white-space: nowrap;
+    
+                //margin-left: #{$grid-gutter*2};
+                transition: 0.3s;
+                padding: 0;
+    
+                .blocks-gallery-item {
+                    display: inline-block;
+                    width: auto;
+                    padding: #{$grid-gutter/4};
+                    cursor: pointer;
+                }
+    
+                li, figure, img {
+                    height: 5rem;
+                    width: auto;
+                    margin: 0;
+                }
+    
+                &.is-cropped .blocks-gallery-item img {
+                    width: auto;
+                }
+            }
+    
+            &--nav__prev,
+            &--nav__next {
+                @include reset-button();
+    
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 5rem;
+                width: 3rem;
+    
+                position: absolute;
+                top: calc(1rem + #{$grid-gutter/4});
+                left: 0;
+    
+                svg {
+                    width: 2rem;
+                    height: 2rem;                
+                }
+            }
+            &--nav__next {
+                left: auto;
+                right: -2px;
+                //justify-content: flex-end;
+            }
+        }
+    }
+}
+
+main.single .--meta {
+    border-top: 2px solid $secondary;
+}

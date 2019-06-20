@@ -1,0 +1,85 @@
+.widget {
+    background: $widget-bg;
+    color: $widget-color;
+    border: $widget-border;
+    padding: $widget-padding;
+    margin: $widget-margin;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &.widget_text {
+        padding: 0;
+        background: none;
+        border-top: 0;
+
+        .custom-html-widget {
+            align-self: stretch;
+        }
+    }
+
+    border-top: 5px solid $primary;
+
+    h2 {
+        color: inherit;
+        font-size: 2rem;
+        text-transform: uppercase;
+        line-height: 2rem;
+        margin: 0;
+    }
+
+    .form--submit {
+        margin: 1rem auto;
+        display: flex;
+
+    }
+
+    .social-links {
+        margin: 0.5rem auto 1.5rem auto;;
+        display: flex;
+        justify-content: center;
+        .social-share {        
+            background: none;
+            svg {
+                fill: white;
+            }
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+}
+
+.widget .quick-links a {
+    display: block;
+    background: $tertiary;
+    color: color-yiq($tertiary);
+    font-family: $font-family-headings;
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 2rem;
+    line-height: 1.5rem;
+    align-self: stretch;
+
+    small {
+        display: block;
+        font-family: $font-family-headings;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        text-transform: uppercase;
+    }
+
+    + a {
+        margin-top: $grid-gutter/2;
+    }
+
+    &:hover, &:focus, &:active {
+        background: $secondary;
+    }
+}

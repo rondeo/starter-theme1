@@ -1,0 +1,131 @@
+.btn,
+.wp-block-button .wp-block-button__link,
+.button,
+.woocommerce a.button {
+    background: $btn-bg;
+    color: $btn-color;
+    padding: $btn-padding; 
+    border-style: $btn-border-style;
+    border-width: $btn-border-width;
+    border-color: $btn-border-color;
+    border-radius: $btn-border-radius;
+
+    display: inline-flex;
+    align-items: center;   
+    text-align: center;
+    justify-content: center;    
+
+    line-height: $btn-line-height;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    font-family: $btn-font-family;   
+    letter-spacing: $btn-letter-spacing;
+    text-decoration: $btn-text-decoration;
+
+    text-transform: $btn-text-transform;    
+
+    transition: background-color $animation-speed;
+
+    &:hover, &:active, &:focus {
+        background: $btn-bg__hover;
+        color: $btn-color__hover;
+        text-decoration: $btn-text-decoration__hover;
+    }
+
+    &:focus {
+        outline: $btn-outline__focus;
+    }
+}
+
+.btn.__outline,
+.wp-block-button.__outline .wp-block-button__link {
+    border-color: $btn-color;
+    border-style: $btn-border-style__outline;
+    border-width: $btn-border-width__outline;
+
+    &:hover {
+        background: $btn-color;
+        color:      $btn-bg;
+    }
+}
+
+.btn.__outline.__clear,
+.wp-block-button.__outline.__clear .wp-block-button__link {
+    border-color:   $dark;
+    background:     transparent;
+    color:          $dark;
+
+    &:hover {
+        background: $dark;
+        color:      $light;
+    }
+}
+    
+.btn.__alt,
+.wp-block-button.__alt .wp-block-button__link
+.woocommerce a.button.alt {
+    font-family: $btn-font-family__alt;
+    font-weight: $btn-font-weight__alt;
+    text-transform: $btn-text-transform__alt;
+    letter-spacing: $btn-letter-spacing__alt;
+}
+    
+.btn.__slim,
+.wp-block-button.__slim .wp-block-button__link {
+    padding: $btn-padding__slim; 
+    font-size: $btn-font-size__slim; 
+}
+
+.btn.__tiny,
+.wp-block-button.__tiny .wp-block-button__link {
+    padding: $btn-padding__tiny; 
+    font-size: $btn-font-size__tiny; 
+    font-weight: $btn-font-weight__tiny; 
+    text-transform: $btn-text-transform__tiny; 
+}
+
+.btn.__secondary,
+.wp-block-button.__secondary .wp-block-button__link {
+    background: $btn-bg__secondary;
+    color: $btn-bg__secondary;
+}
+
+.btn.__reverse,
+.wp-block-button.__reverse .wp-block-button__link {
+    background: $btn-bg__reverse;
+    color: $btn-color__reverse;
+
+    &:hover {
+        background: $btn-bg__reverse__hover;
+        color:      $btn-color__reverse__hover;
+    }
+}
+
+.btn.__toggle {
+    background: $light;
+    color: $light;
+    border: 1px solid $dark;
+    cursor: pointer;
+
+    &::before {        
+        @include toggle-checkbox-label();
+        color: $primary;
+        width: 1rem;
+        height: 1rem;
+    }
+
+    &:hover {
+        background: $dark;
+        color: $light;
+    }
+    
+    input:checked + & {
+        //background: $dark;
+        color: $light;
+
+        &::before {
+            @include toggle-checkbox-label-checked();
+            
+        }
+    }
+}

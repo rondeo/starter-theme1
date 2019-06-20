@@ -1,0 +1,330 @@
+
+.header-navigation {
+
+    font-family: $font-family-headings;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $header-navigation-height;
+    overflow: visible;
+
+    z-index: 100;
+
+    //padding: 1rem 0;
+
+    .admin-bar & {
+        top: 32px;
+    }
+    
+    font-size: $header-navigation-font-size;    
+    line-height: $header-navigation-line-height; 
+    color: white;
+    
+    background: $header-navigation-bg;
+
+    border-bottom: 5px solid $header-navigation-btn-bg;
+    overflow: visible;
+
+    @include media-breakpoint-down(sm) {
+        background: $header-navigation-bg__mobile;
+        height: $header-navigation-height__mobile;
+        padding: 0.5rem 0;
+
+        &, &--nav, &--logo {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &--nav {
+        display: flex;
+        align-items: center;
+        transition: $animation-speed;
+        position: static;
+        height: $header-navigation-height;
+
+        padding: 0 #{$grid-gutter/2};
+
+        /*@include media-breakpoint-up(lg) {
+            @include container();
+        }*/
+
+        width: 100%;
+        
+    }
+
+    &--list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        li {
+            margin: $header-navigation-list-item-margin;            
+            padding: $header-navigation-list-item-padding;            
+
+            display: flex;
+
+            + li {
+                border-top: 1px solid $header-navigation-link-border-color;
+            }
+        }
+    }
+
+    a, .a11y-dropdown button {
+
+        appearance: none;
+        border-color: $header-navigation-link-border-color;
+
+        display: flex;
+        text-decoration: none;
+        
+        margin: $header-navigation-link-margin;            
+        padding: $header-navigation-link-padding;             
+
+        background: $header-navigation-link-bg__mobile;
+        color: $header-navigation-link-color__mobile;
+        
+        line-height: $header-navigation-link-font-size__mobile;
+        font-weight: $header-navigation-link-font-weight;
+        font-size: $header-navigation-link-font-size__mobile;
+        text-align: $header-navigation-link-align;
+
+        text-transform: $header-navigation-link-transform__mobile;
+        
+        &:hover, &:active, &:focus {
+            color: $header-navigation-link-color__hover;
+            text-decoration: $header-navigation-link-decoration__hover;
+        }
+    }                     
+
+    &--menu {
+        position: fixed;
+        top: 0;
+        left: 100%;
+        height: 100vh;
+        width: 100%;
+        max-width: $header-navigation-menu-max-width;
+        padding: $header-navigation-menu-padding;
+        padding-top: $header-navigation-height;
+
+        background: $header-navigation-menu-bg;
+
+        transition: $animation-speed;
+
+        display: flex;
+
+        &[aria-hidden="false"] {
+            transform: translate(-100%, 0);
+        }
+    }
+
+    &--btn {
+        position: absolute;
+        top: #{$header-navigation-height/2};
+        transform: translate(0, -50%);
+        right: 100%;
+        
+        .admin-bar & {
+            top: calc(#{$header-navigation-height/2} + 32px);
+        }
+    }
+
+    li.__btn-link > a {
+        align-self: stretch;       
+        flex: 1 1 100%;            
+    }
+
+    &--btn, li.__btn-link > a {
+        
+        display: flex;
+        align-items: center;
+        
+
+        appearance: none;
+
+        transition: $animation-speed-slow;
+
+        background: $header-navigation-btn-bg;
+        color: $header-navigation-btn-color;
+
+        outline: $header-navigation-btn-outline;
+        border: $header-navigation-btn-border;
+
+        font-weight: $header-navigation-btn-font-weight;
+        font-size: $header-navigation-btn-font-size;        
+        font-family: $header-navigation-btn-font-family;
+
+        border-radius: 0;
+        padding: $header-navigation-btn-padding;
+        margin: $header-navigation-btn-margin;
+
+        span.--icon.__show-when-hidden {
+            margin-left: $header-navigation-btn-font-size;
+        }
+
+        svg {
+            width: auto;
+            height: $header-navigation-btn-icon-height;
+            fill: $header-navigation-btn-color;
+        }
+
+        &:hover, &:active, &:focus {
+            outline: $header-navigation-btn-outline__hover;
+            border: $header-navigation-btn-border__hover;
+            background: $header-navigation-btn-bg__hover;
+            color: $header-navigation-btn-color__hover;
+        }
+        
+        &[aria-expanded="true"] {
+            right: 0;
+            .__show-when-hidden {
+                display: none;
+            }
+        }
+
+        &[aria-expanded="false"] .__show-when-expanded {
+            display: none;            
+        }
+
+    }
+
+    &--logo {
+
+        position: relative;
+        
+        height: $header-navigation-logo-height;
+        width: auto;
+
+        transition: 0.4s;
+        margin: $header-navigation-logo-margin;
+        padding: $header-navigation-logo-padding;
+
+        display: flex;
+        align-items: center;
+        line-height: $header-navigation-logo-height;
+
+        a {
+            position: static;
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 auto;
+            height: auto;
+        }
+        
+        img, & {
+            height: $header-navigation-logo-height;
+            width: auto;
+        }
+
+        img {
+            transform-origin: top left;            
+            transition: 0.3s;
+        }
+
+        figcaption {
+            font-weight: $header-navigation-logo-title-weight;
+            color: $header-navigation-logo-title-color;
+            text-transform: $header-navigation-logo-title-text-transform;
+            margin-left: #{$header-navigation-font-size/3};
+
+            .__has-logo & {
+                display: none;
+            }
+        }
+
+        img, & {
+            height: $header-navigation-logo-height__mobile;
+            width: auto;        
+        }
+        
+    }
+    
+    .menu-item a > span {
+        display: flex;
+        align-items: center;
+    }
+    .menu-item svg {
+        width: $header-navigation-link-font-size;
+        height: $header-navigation-link-font-size;
+        fill: $header-navigation-link-color;
+        //transform: translateY(-1px);
+        
+        fill: color-yiq($primary);
+        margin-right: 0.25rem;
+        transform: translateY(1px);
+        
+    }
+
+}
+
+.a11y-dropdown {
+
+    position: relative;
+    overflow: visible;
+
+    .header-navigation--menu &--toggle[aria-expanded="true"] {
+        color: color-yiq($secondary);
+        background: $secondary;
+
+        &:hover, &:focus, &:active {
+            color: color-yiq($secondary);
+        }
+    }
+
+    &--items {
+        position: absolute;
+        left: 0;
+        top: 100%;
+
+        margin: 0;
+        padding: 1rem;
+
+        color: color-yiq($secondary);
+        background: $secondary;
+        list-style: none;
+
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        width: 400px;
+        
+
+        li {
+            flex: 0 0 calc(50% - 0.5rem);
+            margin: 0;
+            padding: 0;
+
+            &:last-child:nth-child(2n-1) {
+                margin-right: auto;
+            }
+
+            &:nth-child(2) ~ li {
+                border-top: 1px solid color-yiq($secondary);
+            }
+        }
+        a {
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            padding: 0.5rem 0;
+
+            &:hover, &:focus, &:active {
+                background: color-yiq($secondary);
+                color: $secondary;
+            }
+        }
+
+        &[aria-hidden="true"] {
+            display: none;
+        }
+    }    
+}

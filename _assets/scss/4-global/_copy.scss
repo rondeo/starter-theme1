@@ -1,0 +1,59 @@
+.the-content li::before {
+    color: $primary;
+}
+
+@include media-breakpoint-up(md) {
+    .alignright {
+        float: right;
+        clear: right;
+    }
+
+    .alignleft {
+        float: left;
+        clear: left;
+    }
+
+    figure.alignright {
+        margin-left: $grid-gutter;    
+    }
+
+    figure.alignleft {
+        margin-right: $grid-gutter;    
+    }
+}
+
+strong {
+    font-weight: $font-weight__bold;
+}
+
+ul, ol {
+    margin: 1rem 0;    
+    padding: 0 1rem;
+
+    li {
+        margin: 0.5rem 1rem;
+        position: relative;
+    }
+}
+
+
+p {
+    font-size: $font-size-default;
+    line-height: $line-height;
+    max-width: 40rem;
+
+    margin-top: $paragraph-margin-top;
+    margin-bottom: $paragraph-margin-bottom;
+
+    &.aligncenter, &[style*="text-align:center"] {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

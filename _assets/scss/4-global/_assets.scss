@@ -1,0 +1,16 @@
+svg {
+    fill: $light;
+}
+
+mark {
+    background: none;
+    font-weight: bold;
+    border-bottom: 1px dotted $body-color;
+    display: inline-block;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}

@@ -1,0 +1,311 @@
+/** branding styles **/
+
+$font-family-default:       'Raleway', sans-serif !default;
+$font-family-headings:      'Raleway', sans-serif !default;
+
+$primary:                   #481761 !default;
+$primary-light:             lighten($primary, 15%) !default;
+$primary-dark:              darken($primary, 15%) !default;
+
+$secondary:                 #ecf9b5 !default;
+$secondary-light:           lighten($secondary, 10%) !default;
+$secondary-alt:             darken($secondary, 15%) !default;
+
+$tertiary:                  #555 !default;
+$tertiary-alt:              #555 !default;
+
+$body-color:                $tertiary !default;
+$body-bg:                   $secondary-light !default;
+
+$page-bg:                   color-yiq($tertiary) !default;
+
+$light:                     lighten($primary, 25%) !default;
+$dark:                      darken($primary, 15%) !default;
+
+$success:                   #4BB543 !default;
+
+$logo-fill:                 $primary !default;
+
+/** animation **/
+$animation-speed:           0.4s !default;
+$animation-speed-fast:      0.15s !default;
+$animation-speed-slow:      0.6 !default;
+
+/** breakpoint sizes **/
+
+$font-size-default:         1rem    !default;
+$font-size-sm:              0.85rem !default;
+$font-size-lg:              1.25rem !default;
+
+$line-height:               1.35em  !default;
+
+$grid-gutter:               2rem !default;
+
+$root-size-base:            18px !default;
+$root-sizes: (
+    tiny: 14px,
+    xs: 14px,
+    sm: 16px,
+    md: 16px,
+    lg: 16px,
+    xl: 18px,
+    xx: 1.25vw,
+    tv: 1vw
+) !default;
+
+$grid-breakpoints: (
+    tiny: 0,
+    xs: 360px,
+    sm: 575px,
+    md: 760px,
+    lg: 990px,
+    xl: 1200px,
+    xx: 1440px,
+    tv: 1800px
+) !default;
+
+$breakpoint-container-widths: (
+    tiny: calc(100vw - 1rem),
+    xs: calc(100vw - 2rem),
+    sm: calc(100vw - 2rem),
+    md: 750px,
+    lg: 960px,
+    xl: calc(#{map-get($grid-breakpoints, 'xl')} - #{$grid-gutter*4}),
+    xx: calc(#{map-get($grid-breakpoints, 'xx')} - #{$grid-gutter*4}),
+    tv: calc(100vw - #{$grid-gutter*8})
+) !default;
+
+$breakpoint-wide-container-widths: (
+    tiny: 100vw,
+    xs: 100vw,
+    sm: 100vw,
+    md: 100vw,
+    lg: calc(#{map-get($grid-breakpoints, 'lg')} - #{$grid-gutter}),
+    xl: calc(#{map-get($grid-breakpoints, 'xl')} - #{$grid-gutter}),
+    xx: calc(#{map-get($grid-breakpoints, 'xx')} - #{$grid-gutter}),
+    tv: calc(100vw - #{$grid-gutter*2})
+) !default;
+
+/** copy **/
+
+$paragraph-margin-top:      1em !default;
+$paragraph-margin-bottom:   1em !default;
+
+/** links and buttons **/
+
+$link-color:                $primary-light !default;
+$link-text-decoration:      underline !default;
+$link-font-weight:          inherit !default;
+$link-font-style:           inherit !default;
+$link-outline:              none !default;
+
+$link-color__active:            $primary !default;
+$link-text-decoration__active:  none !default;
+$link-font-weight__active:      inherit !default;
+$link-font-style__active:       inherit !default;
+$link-outline__active:          1px solid lighten($primary, 25%) !default;
+
+$link-color__hover:             $primary !default;
+$link-text-decoration__hover:   underline !default;
+$link-font-weight__hover:       inherit !default;
+$link-font-style__hover:        inherit !default;
+$link-outline__hover:           none !default;
+
+$link-color__focus:             $primary !default;
+$link-text-decoration__focus:   none !default;
+$link-font-weight__focus:       inherit !default;
+$link-font-style__focus:        inherit !default;
+$link-outline__focus:           1px dashed lighten($primary, 25%) !default;
+
+$main-shadow-color:                     $primary !default;
+
+/** navigation elements **/
+
+
+$header-navigation-height:              4rem !default;
+$header-navigation-height__mobile:      60px !default;
+
+$header-navigation-font-size:           2rem !default;
+$header-navigation-line-height:         2rem !default;
+
+$header-navigation-bg:                  $secondary !default;
+$header-navigation-bg__mobile:          $header-navigation-bg !default;
+
+$header-navigation-menu-max-width:      20rem !default;
+$header-navigation-menu-bg:             $primary-light !default;
+$header-navigation-menu-padding:        1rem !default;
+
+$header-navigation-logo-bg:             transparent !default;
+$header-navigation-logo-fill:           $body-color !default;
+$header-navigation-logo-height:         3rem !default;
+$header-navigation-logo-height__mobile: 40px !default;
+$header-navigation-logo-margin:         0 !default;
+$header-navigation-logo-padding:        0 !default;
+
+$header-navigation-logo-title-color:            $primary !default;
+$header-navigation-logo-title-weight:           900 !default;
+$header-navigation-logo-title-text-transform:   uppercase !default;
+
+$header-navigation-btn-bg:              $primary !default;
+$header-navigation-btn-bg__hover:       darken($header-navigation-btn-bg, 10%) !default;
+$header-navigation-btn-color:           color-yiq($header-navigation-btn-bg) !default;
+$header-navigation-btn-color__hover:    $header-navigation-btn-color !default;
+$header-navigation-btn-font-weight:     400  !default;
+$header-navigation-btn-font-size:       1.25rem  !default;
+$header-navigation-btn-font-family:     $font-family-headings !default;
+$header-navigation-btn-padding:         0.5rem 1rem !default;
+$header-navigation-btn-margin:          0 !default;
+$header-navigation-btn-icon-height:     1rem !default;
+$header-navigation-btn-border:          none !default;
+$header-navigation-btn-border__hover:   none !default;
+$header-navigation-btn-outline:         none !default;
+$header-navigation-btn-outline__hover:  none !default;
+
+$header-navigation-list-item-padding:   0 !default;
+$header-navigation-list-item-margin:    0 !default;
+
+$header-navigation-link-align:              center !default;
+$header-navigation-link-bg:                 none !default;
+$header-navigation-link-bg__mobile:         none !default;
+$header-navigation-link-border-color:       none !default;
+$header-navigation-link-color:              $secondary !default;
+$header-navigation-link-color__mobile:      $header-navigation-link-color !default;
+$header-navigation-link-color__hover:       $header-navigation-link-color !default;
+$header-navigation-link-decoration:         $link-text-decoration !default;
+$header-navigation-link-decoration__hover:  $link-text-decoration__hover !default;
+$header-navigation-link-font-size__mobile:  1.5rem !default;
+$header-navigation-link-font-size:          1rem !default;
+$header-navigation-link-font-weight:        400 !default;
+$header-navigation-link-margin:             0 !default;
+$header-navigation-link-padding:            0.5rem 0 !default;
+$header-navigation-link-separator-color:    $secondary !default;
+$header-navigation-link-transform:          none !default;
+$header-navigation-link-transform__mobile:  none !default;
+
+$footer-bg:                    $header-navigation-bg !default;
+$footer-color:                 color-yiq($footer-bg) !default;
+$footer-link-color:            $header-navigation-link-color !default;
+$footer-headings-color:        $light !default;
+$footer-separator-color:       $light !default;
+$footer-headings-font-family:  $font-family-headings !default;
+$footer-headings-font-weight:  400 !default;
+
+/** content support **/
+
+$headings-font-family:          $font-family-headings !default;
+$headings-font-weight:          700  !default;
+$headings-font-sizes: (
+    h1: 5rem,
+    h2: 4rem,
+    h3: 3rem,
+    h4: 2rem,
+    h5: $font-size-lg,
+    h6: $font-size-default
+) !default;
+$headings-line-height-multiplier:       1 !default;
+$headings-color:                        $primary !default;
+$headings-font-sizes__mobile-factor:    0.75 !default;
+
+$btn-font-family:               $font-family-headings !default;
+$btn-font-weight:               700 !default;
+$btn-font-size:                 1.5rem !default;
+$btn-letter-spacing:            0.025rem !default;
+$btn-line-height:               1em !default;
+$btn-border-radius:             0 !default;
+$btn-padding:                   0.5rem 1.5rem !default;
+$btn-text-decoration:           none !default;
+$btn-text-decoration__hover:    $btn-text-decoration !default;
+$btn-text-transform:            normal !default;
+
+$btn-padding__slim:         0.25rem 1rem !default;
+$btn-font-size__slim:       1rem !default;
+
+$btn-padding__tiny:         0.5rem 1.5rem !default;
+$btn-font-size__tiny:       0.75rem !default;
+$btn-font-weight__tiny:     700 !default;
+$btn-text-transform__tiny:  none !default;
+
+$btn-color:                white !default;
+$btn-color__hover:          white !default;
+$btn-bg:                    $primary !default;
+$btn-bg__hover:             $primary-dark !default;
+$btn-border-width:          0 !default;
+$btn-border-style:          solid !default;
+$btn-border-color:          $btn-bg !default;
+$btn-outline__focus:         1px dashed $primary-light !default;
+
+$btn-border-width__outline: 1px !default;
+$btn-border-style__outline: solid !default;
+
+$btn-color__secondary:      $secondary !default;
+$btn-bg__secondary:        white !default;
+
+$btn-bg__reverse:           $btn-color !default;
+$btn-color__reverse:        $btn-bg !default;
+$btn-bg__reverse__hover:    $btn-bg !default;
+$btn-color__reverse__hover: $btn-color !default;
+
+$btn-font-family__alt:      $font-family-default !default;
+$btn-font-weight__alt:      700 !default;
+$btn-text-transform__alt:   uppercase !default;
+$btn-letter-spacing__alt:   0.025em !default;
+
+$filter-toggle-color:       $light !default;
+
+$social-feed-post-bg:       white !default;
+$social-feed-post-style:    normal !default;
+$social-feed-post-padding:  0.25rem 0.25rem 0.25rem 1rem !default;
+$social-feed-post-margins:  0 !default;
+
+$pagination-color__prevnext:        $tertiary-alt !default;
+$pagination-color:                  $tertiary-alt !default;
+$pagination-border-color:           $tertiary !default;
+$pagination-color__current:         $light !default;
+$pagination-border-color__current:  $light !default;
+$pagination-bg:                     $light !default;
+$pagination-bg__current:            $dark !default;
+
+$pagination-btn-border:             1px solid $secondary;
+$pagination-btn-border__current:    $pagination-btn-border !default;
+$pagination-btn-border__prevnext:   $pagination-btn-border !default;
+$pagination-btn-padding:            0.5rem;
+$pagination-btn-padding__current:   $pagination-btn-padding !default;
+$pagination-btn-padding__prevnext:  $pagination-btn-padding !default;
+$pagination-btn-bg:                 $secondary;
+$pagination-btn-bg__current:        color-yiq($secondary) !default;
+$pagination-btn-bg__prevnext:       $pagination-btn-bg !default;
+$pagination-btn-color:              color-yiq($secondary) !default;
+$pagination-btn-color__current:     $secondary !default;
+$pagination-btn-color__prevnext:    $pagination-btn-color !default;
+$pagination-btn-font-size:          1rem !default;
+
+$gallery-caption-heading-font-family: $font-family-default !default;
+$gallery-caption-heading-font-size: $font-size-lg !default;
+$gallery-caption-heading-font-weight: 700 !default;
+
+
+$share-icon-fill:           $light !default;
+
+$block-loading-bg:          $light url(assets/images/loading.svg) 50% 50% no-repeat !default;
+
+$font-weight__bold:         bold !default;
+
+$post-meta-color:           $body-color !default;
+
+$input-border:              1px solid $body-color !default;
+$input-bg:                  $page-bg !default;
+$input-color:               $body-color !default;
+$input-padding:             0.5rem !default;
+
+$headline-font-size:        6rem !default;
+$headline-font-size__mobile:3rem !default;
+$headline-width__mobile:    100% !default;
+
+
+$media-block-bg:            $body-bg !default;
+
+$widget-bg:                 $secondary !default;;
+$widget-color:              color-yiq($secondary) !default;;
+$widget-padding:            1rem  !default;;
+$widget-margin:             1rem 0  !default;;
+$widget-border:             none !default;

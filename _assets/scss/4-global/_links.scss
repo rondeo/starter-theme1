@@ -1,0 +1,99 @@
+
+a {
+    text-decoration: $link-text-decoration;
+    font-weight: $link-font-weight;
+    font-style: $link-font-style;
+    color: $link-color;
+
+    &:active {
+        text-decoration: $link-text-decoration__active;
+        font-weight: $link-font-weight__active;
+        font-style: $link-font-style__active;
+        color: $link-color__active;
+        outline: $link-outline__active;
+    }
+
+    &:hover {
+        text-decoration: $link-text-decoration__hover;
+        font-weight: $link-font-weight__hover;
+        font-style: $link-font-style__hover;
+        color: $link-color__hover;
+        outline: $link-outline__hover;
+    }
+
+    &:focus {
+        text-decoration: $link-text-decoration__focus;
+        font-weight: $link-font-weight__focus;
+        font-style: $link-font-style__focus;
+        color: $link-color__focus;
+        outline: $link-outline__focus;
+    }
+}
+
+a.social-share {
+    text-decoration: none;
+
+    fill: $link-color;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+    padding: 2px;
+
+    + a.social-share {
+        margin-left: #{$grid-gutter/2};
+    }
+    
+    svg {
+        width: 2rem;
+        height: 2rem;
+        fill: $link-color;
+    }
+
+    &--facebook svg {
+        fill: #3b5998;
+    }
+    &--twitter svg {
+        fill: #1da1f2;
+    }
+    &--instagram {
+        background: linear-gradient(#c13584, #e1306c, #fd1d1d, #f56040, #f77737, #fcaf45);
+        svg {
+            fill: white;
+        }
+    }
+
+    &:hover, &:active, &:focus {
+        outline: $btn-outline__focus;
+    }
+}
+
+
+a.--overlay {
+    background: rgba($secondary, 0.85);
+    opacity: 0;
+    display: none;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    color: $tertiary;
+    font-family: $font-family-headings;
+    font-size: $font-size-lg;
+    line-height: 1rem;
+    text-decoration: none;
+
+    span:nth-child(3) {
+        color: $primary;
+        margin-top: auto;
+        font-family: $font-family-default;
+        font-weight: 900;
+    }
+}

@@ -1,0 +1,216 @@
+@mixin ratio-block($ratio: 100%) {
+
+    position: relative;
+    height: auto;
+
+    &::after {
+        content:'';
+        font-size: 0;
+        width: 0;
+        visibility: hidden;
+        padding: $ratio 0 0 0;
+    }
+
+}
+
+@mixin gallery-caption() {
+    position: absolute;
+    bottom: $grid-gutter;
+    right: 0;
+    background: rgba($dark, 0.85);
+    color: white;
+    padding: 1rem 3rem 1rem 1.5rem;
+    max-width: 15rem;
+    z-index: 2;
+    margin: 0;
+    overflow: visible;
+
+    font-size: $font-size-sm;
+    transition: 0.4s;
+
+    h3 {
+        line-height: $gallery-caption-heading-font-size;
+        font-family: $gallery-caption-heading-font-family;
+        font-size: $gallery-caption-heading-font-size;
+        font-weight: $gallery-caption-heading-font-weight;
+        
+    }
+
+    .format, .close {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform-origin: center center;
+        transform: translate(50%, -50%) rotate(-90deg);
+        font-weight: 900;
+        text-transform: uppercase;
+
+        text-align: center;
+        z-index: 1;            
+    }
+    .close {
+        display: none;
+    }
+
+    &::after {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: #{$font-size-default + 0.5rem};
+        height: 100%;
+        z-index: 0;
+
+        content: '';
+        font-size: 0;
+        
+        background: $primary;
+    }
+
+    &.__has-play-btn {
+
+        .__overlay-btn {
+            position: absolute;
+            top: 50%;
+            right: calc(100% + 1rem);
+            transform: translate(0, -50%);
+            width: 4rem;
+            height: 4rem;
+            left: auto;
+            bottom: auto;
+        }
+    }
+}
+
+@mixin container {
+
+    width: 100%;
+    
+    margin-right: auto;
+    margin-left: auto;
+    
+
+    @each $breakpoint, $container-max-width in $breakpoint-container-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+          max-width: $container-max-width;
+        }
+    }
+
+}
+
+@mixin container-wide {
+
+    width: 100%;
+    
+    margin-right: auto;
+    margin-left: auto;    
+
+    @each $breakpoint, $container-max-width in $breakpoint-wide-container-widths {
+        @include media-breakpoint-up($breakpoint, $grid-breakpoints) {
+          max-width: $container-max-width;
+        }
+    }
+
+}
+
+@mixin container-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin container-padding {
+    padding-right: ($grid-gutter / 2);
+    padding-left: ($grid-gutter / 2);
+}
+
+@mixin background-cover {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;    
+    height: 100%;
+
+    object-fit: cover;        
+
+}
+
+@mixin fill-container {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+@mixin reset-button {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    outline: 0;
+}
+
+@mixin locked-background-red {
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#{$primary}"><path d="M15.8,8H14V5.6C14,2.703,12.665,1,10,1C7.334,1,6,2.703,6,5.6V8H4C3.447,8,3,8.646,3,9.199V17 c0,0.549,0.428,1.139,0.951,1.307l1.197,0.387C5.672,18.861,6.55,19,7.1,19h5.8c0.549,0,1.428-0.139,1.951-0.307l1.196-0.387 C16.571,18.139,17,17.549,17,17V9.199C17,8.646,16.352,8,15.8,8z M12,8H8V5.199C8,3.754,8.797,3,10,3s2,0.754,2,2.199V8z"/></svg>');
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+}
+
+@mixin unlocked-background-red {
+
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#{$primary}"><path style="stroke:none!important" d="M15.8,8H14V5.6C14,2.703,12.665,1,10,1C7.334,1,6,2.703,6,5.6V6h2V5.199C8,3.754,8.797,3,10,3 s2,0.754,2,2.199V8H4C3.447,8,3,8.646,3,9.199V17c0,0.549,0.428,1.139,0.951,1.307l1.197,0.387C5.672,18.861,6.55,19,7.1,19h5.8 c0.549,0,1.428-0.139,1.951-0.307l1.196-0.387C16.571,18.139,17,17.549,17,17V9.199C17,8.646,16.352,8,15.8,8z"/></svg>');
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+
+}
+
+@mixin toggle-checkbox-label {
+
+    content: '';
+
+    font-size: 1rem;
+    color: $secondary;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1rem;
+
+    
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 2px solid $primary;
+    margin-right: 0.5rem;     
+
+}
+
+@mixin toggle-checkbox-label-checked {
+    content: '\2714';
+}
+
+@mixin star-border {
+    border-color: $tertiary;
+    border-style: dotted;
+    border-image-source: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#{$tertiary}"><path d="M6.855,14.365l-1.817,6.36c-0.115,0.402,0.034,0.835,0.372,1.082c0.34,0.247,0.797,0.257,1.145,0.024L12,18.202l5.445,3.63 C17.613,21.944,17.807,22,18,22c0.207,0,0.414-0.064,0.59-0.192c0.338-0.247,0.487-0.68,0.372-1.082l-1.817-6.36l4.48-3.584 c0.308-0.247,0.442-0.651,0.343-1.033s-0.414-0.67-0.804-0.734l-5.497-0.916l-2.772-5.545c-0.34-0.678-1.449-0.678-1.789,0 L8.333,8.098L2.836,9.014c-0.39,0.064-0.704,0.353-0.804,0.734s0.035,0.786,0.343,1.033L6.855,14.365z"/></svg>');
+    border-image-width: 20px;
+    border-image-repeat: round;
+    border-image-slice: 30 1;
+    border-image-outset: 20px;
+}
+
+@mixin arrow-secondary {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:#{$secondary}"><path d="M7 20a1 1 0 0 0 .537-.156l11-7a1.002 1.002 0 0 0 0-1.688l-11-7A.999.999 0 0 0 6 5v14a.998.998 0 0 0 1 1zM8 6.822L16.138 12 8 17.178V6.822z"/></svg>');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+@mixin arrow-white {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:white"><path d="M7 20a1 1 0 0 0 .537-.156l11-7a1.002 1.002 0 0 0 0-1.688l-11-7A.999.999 0 0 0 6 5v14a.998.998 0 0 0 1 1zM8 6.822L16.138 12 8 17.178V6.822z"/></svg>');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}

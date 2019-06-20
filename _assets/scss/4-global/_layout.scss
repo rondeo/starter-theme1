@@ -1,0 +1,19 @@
+
+.--row {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+    }
+}
+
+.--column {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-down(sm) {
+        flex-direction: column;
+    }
+}

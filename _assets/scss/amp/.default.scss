@@ -1,0 +1,32 @@
+@import "../1-vendor/functions";
+
+@import "../2-variables/default";
+
+@import "../3-tools/all";
+
+@import "../4-generic/global";
+
+.__amp-layout {
+    @import "../4-generic/blog-amp";
+    @import "../4-generic/navigation-amp";
+}
+
+@import "../5-html/headings";
+@import "../5-html/amp";
+
+@import "../6-design/buttons";
+
+.__amp-layout {
+    @import "../6-design/blocks-amp";
+    @import "../6-design/content-amp";        
+}
+
+@import "../7-helpers/common";
+
+.single--the-content, .single--related-articles {
+    border-top: 2px solid $secondary;
+}
+
+.related-post--meta {
+    color: $secondary;
+}

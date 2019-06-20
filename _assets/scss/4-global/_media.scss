@@ -1,0 +1,17 @@
+.the-content figure.wp-block-embed.is-type-video,
+.the-content .wp-block-image {
+
+    background-color: $media-block-bg;
+
+    figcaption {
+        margin: 0.5rem 0 0 0;
+        padding: 0.5rem 1rem;
+        border-top: 1px solid $primary;
+        color: $body-color;
+    }
+
+}
+
+.the-content .wp-block-image {
+    padding: 0.5rem;
+}

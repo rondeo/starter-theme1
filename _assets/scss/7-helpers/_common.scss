@@ -1,0 +1,108 @@
+a.__overlay {
+    background: rgba($secondary, 0.85);
+    opacity: 0;
+    display: none;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    color: $tertiary;
+    font-family: $font-family-headings;
+    font-size: $font-size-lg;
+    line-height: 1rem;
+    text-decoration: none;
+
+    span:nth-child(3) {
+        color: $primary;
+        margin-top: auto;
+        font-family: $font-family-default;
+        font-weight: 900;
+    }
+}
+
+.__overlay-btn {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 4rem;
+        height: 4rem;
+        fill: $primary;
+        border-radius: 3rem;        
+        background: $body-color;
+    }
+    
+}
+
+.__loading-overlay {
+
+    position: relative;
+
+    &::before {
+        position: absolute;
+        top: 5rem;
+        left: 50%;
+        transform: translate(-50%, 0);
+        content: '';
+        width: 5rem;
+        height: 5rem;
+        background: transparent;
+        background-image: url(../images/loading.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    > * {
+        transition: 0.4s;
+        opacity: 0.35;
+    }
+}
+
+.__page-bg {
+    background: $page-bg;
+}
+
+.__color-primary {
+    color: $primary;
+}
+
+.__color-secondary {
+    color: $secondary;
+}
+
+.__container {
+    @include container();
+}
+
+@include media-breakpoint-up(md) {
+    body.__menu-open main {
+        border: 2px solid $main-shadow-color;
+        box-shadow: 10px 10px 0 $main-shadow-color;
+    }
+}
+
+.__fade-out {
+    position: relative;
+    &::after {
+        @include fill-container();
+        content: '';
+        z-index: 10;
+        background: linear-gradient(to bottom, transparent, transparent 1rem, $page-bg);
+    }
+}
