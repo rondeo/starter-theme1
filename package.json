@@ -22,7 +22,6 @@
         "grunt-run": "^0.8.0",
         "grunt-sass": "^2.0.0",
         "grunt-svgstore": "^1.0.0",
-        "npm": "^6.9.0",
         "update-notifier": "^2.3.0"
     }
 }
